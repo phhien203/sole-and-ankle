@@ -42,14 +42,21 @@ const ShoeCard = ({
         <Spacer size={12} />
         <Row>
           <Name>{name}</Name>
-          <Price style={{
-            '--color': variant === 'on-sale' ? COLORS.gray[700] : undefined,
-            '--text-decoration': variant === 'on-sale' ? 'line-through' : undefined
-          }}>{formatPrice(price)}</Price>
+          <Price
+            style={{
+              '--color': variant === 'on-sale' ? COLORS.gray[700] : undefined,
+              '--text-decoration':
+                variant === 'on-sale' ? 'line-through' : undefined,
+            }}
+          >
+            {formatPrice(price)}
+          </Price>
         </Row>
         <Row>
           <ColorInfo>{pluralize('Color', numOfColors)}</ColorInfo>
-          {variant === 'on-sale' && (<SalePrice>{formatPrice(salePrice)}</SalePrice>)}
+          {variant === 'on-sale' && (
+            <SalePrice>{formatPrice(salePrice)}</SalePrice>
+          )}
         </Row>
       </Wrapper>
     </Link>
